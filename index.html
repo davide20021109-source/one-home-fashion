@@ -3,111 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Casalinghi – ONE HOME & FASHION</title>
+<title>ONE HOME & FASHION</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+:root{
+  --nero:#000;
+  --rosso:#c00000;
+  --bianco:#fff;
+}
+
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  background:#ffffff;
-  color:#000;
+  background:var(--bianco);
+  color:var(--nero);
 }
 
-header{
+/* HEADER */
+.header-bar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 30px;
+  flex-wrap:wrap;
+}
+
+.header-left{
+  display:flex;
+  gap:20px;
+}
+.header-left a{
+  font-size:34px;
+  color:var(--nero);
+  transition:0.3s;
+}
+.header-left a:hover{
+  color:var(--rosso);
+}
+
+.logo-center{
   text-align:center;
-  padding:30px 20px;
 }
-
-header h1{
-  color:#c00000;
-  letter-spacing:2px;
+.logo-center img{
+  height:120px;
 }
-
-.gallery{
-  max-width:1200px;
-  margin:40px auto;
-  padding:0 20px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-}
-
-.card{
-  position:relative;
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
-.card img{
-  width:100%;
-  height:280px;
-  object-fit:cover;
-  transition:0.4s;
-}
-
-.card:hover img{
-  transform:scale(1.08);
-}
-
-.card-title{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  background:rgba(0,0,0,0.6);
-  color:white;
-  padding:12px;
-  text-align:center;
+.logo-center p{
+  margin:8px 0 0;
   font-weight:bold;
 }
 
-.back{
-  text-align:center;
-  margin:40px 0;
+.header-right{
+  text-align:right;
+  font-size:1.05rem;
 }
 
-.back a{
+/* MENU REPARTI */
+.menu-reparti{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:18px;
+  background:var(--nero);
+  padding:15px;
+}
+
+.menu-reparti a{
+  color:var(--bianco);
   text-decoration:none;
-  color:#c00000;
   font-weight:bold;
+  padding:8px 14px;
+}
+.menu-reparti a:hover{
+  background:var(--rosso);
+}
+
+.menu-reparti .promo{
+  color:var(--rosso);
+  font-size:1.2rem;
+}
+
+/* SEZIONI */
+section{
+  max-width:1100px;
+  margin:60px auto;
+  padding:0 20px;
+}
+
+h2{
+  text-align:center;
+  color:var(--rosso);
+  letter-spacing:2px;
+  margin-bottom:30px;
+}
+
+footer{
+  background:var(--nero);
+  color:white;
+  text-align:center;
+  padding:30px;
+  margin-top:60px;
+}
+
+@media(max-width:900px){
+  .header-bar{
+    flex-direction:column;
+    gap:20px;
+  }
+  .header-right{
+    text-align:center;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>REPARTO CASALINGHI</h1>
-  <p>Scopri alcuni dei nostri articoli</p>
-</header>
+<!-- HEADER -->
+<div class="header-bar">
 
-<section class="gallery">
-
-  <div class="card">
-    <img src="image/COSMETICI1.jpg" alt="Cosmetici">
-    <div class="card-title">COSMETICI</div>
+  <div class="header-left">
+    <a href="https://www.google.com/maps/place/ONE+HOME+%26+FASHION/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+    <a href="https://www.instagram.com/one_home_fashion_/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/39055959556" target="_blank"><i class="fab fa-whatsapp"></i></a>
   </div>
 
-  <div class="card">
-    <img src="image/cornici1.jpg" alt="Cornici">
-    <div class="card-title">CORNICI & DECORAZIONI</div>
+  <div class="logo-center">
+    <img src="image/logo1.jpg" alt="ONE HOME & FASHION">
+    <p>ONE HOME & FASHION – ABBIGLIAMENTO E CASALINGHI</p>
   </div>
 
-  <div class="card">
-    <img src="image/ferramenta.jpg" alt="Ferramenta">
-    <div class="card-title">FERRAMENTA</div>
+  <div class="header-right">
+    <strong>
+      Via della Comunità Europea 18<br>
+      Figline Incisa Valdarno (FI)
+    </strong>
   </div>
 
-  <div class="card">
-    <img src="image/giocattoli1.jpg" alt="Giocattoli">
-    <div class="card-title">GIOCATTOLI</div>
-  </div>
+</div>
 
+<!-- MENU REPARTI -->
+<div class="menu-reparti">
+  <a href="casalinghi.html">CASALINGHI</a>
+  <a href="abbigliamento.html">ABBIGLIAMENTO</a>
+  <a href="cartoleria.html">CARTOLERIA</a>
+  <a href="mobili.html">MOBILI</a>
+  <a href="pet.html">PET</a>
+  <a href="arredamento.html">ARREDAMENTO</a>
+  <a href="idee-regalo.html">IDEE REGALO</a>
+  <a href="detersivi.html">DETERSIVI</a>
+  <a href="cucina.html">CUCINA</a>
+  <a href="fiori.html">FIORI</a>
+  <a href="promo.html" class="promo">PROMO</a>
+</div>
+
+<!-- SEZIONI -->
+<section id="chi-siamo">
+  <h2>CHI SIAMO</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    <strong>ONE HOME & FASHION</strong> è un punto vendita dedicato alla casa e all’abbigliamento,
+    con un’ampia scelta di articoli per ogni esigenza.
+    Qualità, convenienza e varietà sono al centro della nostra filosofia.
+  </p>
 </section>
 
-<div class="back">
-  <a href="index.html">← Torna alla Home</a>
-</div>
+<section id="dove-siamo">
+  <h2>DOVE SIAMO</h2>
+  <p style="text-align:center;">
+    Via della Comunità Europea 18<br>
+    Figline Incisa Valdarno (FI)
+  </p>
+</section>
+
+<section id="contatti">
+  <h2>CONTATTI</h2>
+  <p style="text-align:center;">
+    Seguici su Instagram o contattaci tramite WhatsApp per informazioni e promozioni.
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 ONE HOME & FASHION</p>
+  <p>Sito a scopo illustrativo</p>
+</footer>
 
 </body>
 </html>
