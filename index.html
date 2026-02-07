@@ -35,17 +35,17 @@ header{border-bottom:1px solid #ddd;}
 
 .header-left{
   display:flex;
-  gap:20px;
+  gap:24px;
 }
 .header-left a{
-  font-size:30px;
+  font-size:42px;
   color:#000;
 }
 .header-left a:hover{color:var(--red);}
 
 .header-center{
   text-align:center;
-  transform:translateX(18px);
+  transform:translateX(22px);
 }
 .header-center img{height:120px;}
 
@@ -77,6 +77,7 @@ header{border-bottom:1px solid #ddd;}
 }
 .menu a:hover{color:var(--red);}
 .menu .promo{color:var(--red);}
+.menu .card{border:1px solid var(--red); padding:6px 12px;}
 
 .menu li{list-style:none; position:relative;}
 .submenu{
@@ -100,7 +101,7 @@ header{border-bottom:1px solid #ddd;}
 .brands{
   width:100%;
   overflow:hidden;
-  padding:50px 0;
+  padding:60px 0;
 }
 .brands-track{
   display:flex;
@@ -131,31 +132,32 @@ h2{
 /* ===== PROMOZIONI ===== */
 .promo-month{
   background:var(--gray);
-  padding:80px 0;
+  padding:90px 10px;
 }
 
 .promo-wrapper{
-  max-width:1200px;
+  max-width:1400px;
   margin:auto;
-  padding:0 20px;
+}
+
+.promo-title{
+  font-size:2.4rem;
 }
 
 .promo-layout{
   display:grid;
-  grid-template-columns:1fr 2fr;
+  grid-template-columns:420px 1fr;
   gap:40px;
   align-items:flex-start;
 }
 
-/* poster */
 .promo-poster img{
   width:100%;
-  height:420px;
+  height:520px;
   object-fit:cover;
   box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
 
-/* articoli promo */
 .promo-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -181,6 +183,24 @@ h2{
   font-weight:bold;
 }
 
+/* ===== NOVITÀ ===== */
+.news{
+  background:#fff;
+}
+
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.news-item{
+  background:var(--gray);
+  padding:20px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
 /* ===== CASALINGHI ===== */
 .casalinghi-grid{
   display:grid;
@@ -194,9 +214,7 @@ h2{
   box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
-.casalinghi-right img{
-  margin-bottom:20px;
-}
+.casalinghi-right img{margin-bottom:20px;}
 
 /* ===== FOOTER ===== */
 footer{
@@ -237,28 +255,17 @@ footer{
   <li>
     <a href="#casalinghi">CASALINGHI</a>
     <div class="submenu">
-      <a href="#casalinghi">Ferramenta</a>
-      <a href="#casalinghi">Auto</a>
-      <a href="#casalinghi">Giardinaggio</a>
-      <a href="#casalinghi">Sport</a>
-      <a href="#casalinghi">Stagionale</a>
-      <a href="#casalinghi">Giocattoli</a>
-      <a href="#casalinghi">Cucito</a>
-      <a href="#casalinghi">Festa</a>
-      <a href="#casalinghi">Plastica</a>
-      <a href="#casalinghi">Pulizia</a>
+      <a href="#">Ferramenta</a><a href="#">Auto</a><a href="#">Giardinaggio</a>
+      <a href="#">Sport</a><a href="#">Stagionale</a><a href="#">Giocattoli</a>
+      <a href="#">Cucito</a><a href="#">Festa</a><a href="#">Plastica</a><a href="#">Pulizia</a>
     </div>
   </li>
-
   <li>
     <a href="#">ABBIGLIAMENTO</a>
     <div class="submenu">
-      <a href="#">Uomo</a>
-      <a href="#">Donna</a>
-      <a href="#">Calzature</a>
+      <a href="#">Uomo</a><a href="#">Donna</a><a href="#">Calzature</a>
     </div>
   </li>
-
   <a href="#">CARTOLERIA</a>
   <a href="#">MOBILI</a>
   <a href="#">PET</a>
@@ -267,10 +274,10 @@ footer{
   <a href="#">DETERSIVI</a>
   <a href="#">CUCINA</a>
   <a href="#">FIORI</a>
+  <a href="#" class="card">ONE HOME CARD</a>
   <a href="#promo" class="promo">PROMO</a>
 </nav>
 
-<!-- MARCHI -->
 <div class="brands">
   <div class="brands-track">
     <img src="IMAGE/girmi.jpg">
@@ -284,60 +291,43 @@ footer{
   </div>
 </div>
 
-<!-- PROMOZIONI -->
 <section id="promo" class="promo-month">
-  <div class="promo-wrapper wide">
+  <div class="promo-wrapper">
     <h2 class="promo-title">PROMOZIONI DEL MESE</h2>
-    <p class="promo-text" style="text-align:center;">
-  Occasioni imperdibili selezionate per te: qualità, convenienza e novità ogni mese.
-</p>
+    <p style="text-align:center">
+      Occasioni imperdibili selezionate per te: qualità, convenienza e novità ogni mese.
+    </p>
 
     <div class="promo-layout">
-      
-      <!-- POSTER / VOLANTINO -->
       <div class="promo-poster">
-        <img src="IMAGE/COMPRABENE1.JPG" alt="Volantino Promozioni">
+        <img src="IMAGE/COMPRABENE1.JPG">
       </div>
 
-      <!-- ARTICOLI PROMO -->
       <div class="promo-grid">
-        <div class="promo-item">
-          <img src="IMAGE/ferramenta.jpg">
-          <p>Set Ferramenta</p>
-          <div class="price">€19,90</div>
-        </div>
-        <div class="promo-item">
-          <img src="IMAGE/giocattoli1.jpg">
-          <p>Giocattoli</p>
-          <div class="price">€9,90</div>
-        </div>
-        <div class="promo-item">
-          <img src="IMAGE/COSMETICI1.jpg">
-          <p>Cosmetici</p>
-          <div class="price">€4,99</div>
-        </div>
-        <div class="promo-item">
-          <img src="IMAGE/cornici1.jpg">
-          <p>Cornici</p>
-          <div class="price">€7,90</div>
-        </div>
-        <div class="promo-item">
-          <img src="IMAGE/ferramenta.jpg">
-          <p>Utensili</p>
-          <div class="price">€14,90</div>
-        </div>
-        <div class="promo-item">
-          <img src="IMAGE/giocattoli1.jpg">
-          <p>Giochi</p>
-          <div class="price">€6,90</div>
-        </div>
+        <div class="promo-item"><img src="IMAGE/ferramenta.jpg"><p>Ferramenta</p><div class="price">€19,90</div></div>
+        <div class="promo-item"><img src="IMAGE/giocattoli1.jpg"><p>Giocattoli</p><div class="price">€9,90</div></div>
+        <div class="promo-item"><img src="IMAGE/COSMETICI1.jpg"><p>Cosmetici</p><div class="price">€4,99</div></div>
+        <div class="promo-item"><img src="IMAGE/cornici1.jpg"><p>Cornici</p><div class="price">€7,90</div></div>
+        <div class="promo-item"><img src="IMAGE/ferramenta.jpg"><p>Utensili</p><div class="price">€14,90</div></div>
+        <div class="promo-item"><img src="IMAGE/giocattoli1.jpg"><p>Giochi</p><div class="price">€6,90</div></div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- CASALINGHI -->
+<section class="news">
+  <h2>NOVITÀ</h2>
+  <p style="text-align:center">
+    Scopri i nuovi arrivi e i prodotti più richiesti del momento.
+  </p>
+
+  <div class="news-grid">
+    <div class="news-item">Nuovi articoli casalinghi</div>
+    <div class="news-item">Nuova collezione abbigliamento</div>
+    <div class="news-item">Idee regalo stagionali</div>
+  </div>
+</section>
+
 <section id="casalinghi">
   <h2>CASALINGHI</h2>
   <div class="casalinghi-grid">
