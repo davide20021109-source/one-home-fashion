@@ -44,7 +44,10 @@ header{border-bottom:1px solid #ddd;}
 }
 .header-left a:hover{color:var(--red);}
 
-.header-center{text-align:center;}
+.header-center{
+  text-align:center;
+  margin-left:40px; /* micro spostamento verso destra */
+}
 .header-center img{height:120px;}
 
 .header-right{
@@ -78,7 +81,8 @@ header{border-bottom:1px solid #ddd;}
 .menu a:hover{color:var(--red);}
 .menu .promo{color:var(--red);}
 
-/* sottomenu */
+.menu li{list-style:none; position:relative;}
+
 .submenu{
   display:none;
   position:absolute;
@@ -89,30 +93,28 @@ header{border-bottom:1px solid #ddd;}
   min-width:220px;
   z-index:10;
 }
-
 .submenu a{
   display:block;
   padding:6px 10px;
-  font-size:0.9rem;
+  font-size:.9rem;
 }
-
-.menu li{list-style:none; position:relative;}
 .menu li:hover .submenu{display:block;}
 
-/* ===== SLIDER MARCHI ===== */
+/* ===== SLIDER MARCHI FULL WIDTH ===== */
 .brands{
-  padding:40px 0;
+  width:100%;
   overflow:hidden;
+  padding:50px 0;
 }
 
 .brands-track{
   display:flex;
-  gap:80px;
+  gap:100px;
   align-items:center;
   animation:scroll 22s linear infinite;
 }
 
-.brands img{height:70px;}
+.brands img{height:80px;}
 
 @keyframes scroll{
   from{transform:translateX(0);}
@@ -130,26 +132,75 @@ h2{
   text-align:center;
   color:var(--red);
   letter-spacing:2px;
-  margin-bottom:40px;
+  margin-bottom:20px;
 }
 
-/* ===== CASALINGHI IMMAGINI ===== */
+/* ===== PROMOZIONI DEL MESE ===== */
+.promo-month{
+  background:var(--gray);
+}
+
+.promo-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.poster{
+  background:#fff;
+  height:360px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  border:2px dashed #ccc;
+}
+
+/* slider manuale */
+.slider{
+  position:relative;
+  overflow:hidden;
+}
+
+.slider-track{
+  display:flex;
+  transition:.5s ease;
+}
+
+.slider img{
+  width:100%;
+  flex-shrink:0;
+  border-radius:12px;
+}
+
+.slider button{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:#000;
+  color:#fff;
+  border:none;
+  font-size:20px;
+  padding:10px 14px;
+  cursor:pointer;
+}
+.prev{left:10px;}
+.next{right:10px;}
+
+/* ===== CASALINGHI ===== */
 .casalinghi-grid{
   display:grid;
   grid-template-columns:2fr 1fr;
   gap:30px;
   align-items:center;
 }
-
 .casalinghi-grid img{
   width:100%;
   border-radius:12px;
   box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
-
 .casalinghi-right img{margin-bottom:20px;}
-
-.promo-section{background:var(--gray);}
 
 footer{
   background:#000;
@@ -164,25 +215,20 @@ footer{
 
 <header>
   <div class="header-top">
-
-    <!-- SINISTRA -->
     <div class="header-left">
       <a href="https://www.google.com/maps/place/ONE+HOME+%26+FASHION/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
       <a href="https://www.instagram.com/one_home_fashion_/" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://wa.me/39055959556" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
-    <!-- CENTRO -->
     <div class="header-center">
       <img src="IMAGE/logo1.jpg" alt="ONE HOME & FASHION">
     </div>
 
-    <!-- DESTRA -->
     <div class="header-right">
       <strong>Via della Comunità Europea 18</strong><br>
       Figline Incisa Valdarno (FI)
     </div>
-
   </div>
 
   <div class="header-slogan">
@@ -190,7 +236,6 @@ footer{
   </div>
 </header>
 
-<!-- MENU -->
 <nav class="menu">
   <li>
     <a href="#casalinghi">CASALINGHI</a>
@@ -207,18 +252,11 @@ footer{
       <a href="#casalinghi">Pulizia</a>
     </div>
   </li>
-
-  <a href="#abbigliamento">ABBIGLIAMENTO</a>
-  <a href="#cartoleria">CARTOLERIA</a>
-  <a href="#arredamento">ARREDAMENTO</a>
-  <a href="#pet">PET</a>
-  <a href="#cucina">CUCINA</a>
-  <a href="#fiori">FIORI</a>
-  <a href="#promo" class="promo">PROMO</a>
+  <a href="#promo-month" class="promo">PROMO</a>
 </nav>
 
-<!-- MARCHI -->
-<section id="marchi" class="brands">
+<!-- SLIDER MARCHI -->
+<div class="brands">
   <div class="brands-track">
     <img src="IMAGE/girmi.jpg">
     <img src="IMAGE/tognana.jpg">
@@ -229,47 +267,41 @@ footer{
     <img src="IMAGE/pedrini.jpg">
     <img src="IMAGE/aeternum.jpg">
   </div>
-</section>
+</div>
 
-<!-- CASALINGHI -->
-<section id="casalinghi">
-  <h2>CASALINGHI</h2>
-  <div class="casalinghi-grid">
-    <img src="IMAGE/ferramenta.jpg">
-    <div class="casalinghi-right">
-      <img src="IMAGE/giocattoli1.jpg">
-      <img src="IMAGE/COSMETICI1.jpg">
+<!-- PROMOZIONI DEL MESE -->
+<section id="promo-month" class="promo-month">
+  <h2>PROMOZIONI DEL MESE</h2>
+  <p style="text-align:center;max-width:700px;margin:0 auto 40px">
+    Scopri le migliori offerte selezionate per la casa e il tempo libero. Occasioni limitate, solo da ONE HOME & FASHION.
+  </p>
+
+  <div class="promo-layout">
+    <div class="poster">
+      SPAZIO VOLANTINO / POSTER
+    </div>
+
+    <div class="slider">
+      <div class="slider-track" id="sliderTrack">
+        <img src="IMAGE/ferramenta.jpg">
+        <img src="IMAGE/giocattoli1.jpg">
+        <img src="IMAGE/COSMETICI1.jpg">
+      </div>
+      <button class="prev" onclick="slide(-1)">‹</button>
+      <button class="next" onclick="slide(1)">›</button>
     </div>
   </div>
 </section>
 
-<!-- PROMO -->
-<section id="promo" class="promo-section">
-  <h2>PROMO</h2>
-  <p style="text-align:center">Offerte disponibili in negozio.</p>
-</section>
-
-<!-- NOVITA -->
-<section id="novita">
-  <h2>NOVITÀ</h2>
-  <p style="text-align:center">Nuovi arrivi e prodotti selezionati.</p>
-</section>
-
-<!-- CHI SIAMO -->
-<section id="chi-siamo">
-  <h2>CHI SIAMO</h2>
-  <p style="text-align:center">
-    ONE HOME & FASHION è il punto di riferimento per la casa e l’abbigliamento.
-  </p>
-</section>
-
-<!-- DOVE SIAMO -->
-<section id="dove-siamo">
-  <h2>DOVE SIAMO</h2>
-  <p style="text-align:center">
-    Via della Comunità Europea 18 – Figline Incisa Valdarno (FI)
-  </p>
-</section>
+<script>
+let index=0;
+function slide(dir){
+  const track=document.getElementById("sliderTrack");
+  const total=track.children.length;
+  index=(index+dir+total)%total;
+  track.style.transform=`translateX(-${index*100}%)`;
+}
+</script>
 
 <footer>
   © 2026 ONE HOME & FASHION
