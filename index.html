@@ -45,6 +45,7 @@ header{border-bottom:1px solid #ddd;}
 
 .header-center{
   text-align:center;
+  transform:translateX(22px);
 }
 .header-center img{height:120px;}
 
@@ -60,59 +61,58 @@ header{border-bottom:1px solid #ddd;}
   letter-spacing:1px;
 }
 
-/* ===== MENU (GRID STABILE) ===== */
+/* ===== MENU (RIGA ALLARGATA, MARGINI RIDOTTI) ===== */
 .menu{
   background:#000;
-  padding:18px 10px;
+  padding:12px 4px;
   display:flex;
   justify-content:center;
 }
 
 .menu-list{
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
+  display:flex;
   width:100%;
-  max-width:1400px;
-  margin:0;
-  padding:0;
-  list-style:none;
+  max-width:1700px;
+  align-items:center;
+  gap:10px;
 }
 
 .menu-left,
+.menu-center,
 .menu-right{
   display:flex;
-  gap:12px;
-  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+  flex-wrap:nowrap;
 }
 
-.menu-left{justify-content:flex-start;}
-.menu-right{justify-content:flex-end;}
+.menu-left{flex:1;}
+.menu-center{flex:0 0 auto;}
+.menu-right{
+  flex:1;
+  justify-content:flex-end;
+}
 
-.menu-center{text-align:center;}
-
-/* PROMO */
 .menu-center .promo{
   color:#fff;
   background:var(--red);
-  padding:10px 22px;
+  padding:8px 16px;
   border-radius:6px;
   font-weight:bold;
-  font-size:1.1rem;
-  text-decoration:none;
+  font-size:1rem;
 }
-.menu-center .promo:hover{background:#800000;}
 
-/* CARD */
 .menu a.card{
   color:#fff;
   background:var(--red);
-  padding:8px 15px;
+  padding:7px 12px;
   border-radius:5px;
   font-weight:bold;
+  font-size:.95rem;
   text-decoration:none;
 }
-.menu a.card:hover{background:#800000;}
+
+.menu li{list-style:none;}
 
 /* ===== SLIDER MARCHI ===== */
 .brands{
@@ -150,10 +150,17 @@ header{border-bottom:1px solid #ddd;}
   grid-template-columns:523px 1fr;
   gap:10px;
 }
-.promo-poster img{
-  width:100%;
-  background:#fff;
+.promo-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
 }
+.promo-item{
+  background:#fff;
+  padding:10px;
+  text-align:center;
+}
+.price{color:var(--red); font-weight:bold;}
 
 /* ===== NOVITÀ ===== */
 .news-grid{
@@ -167,10 +174,6 @@ header{border-bottom:1px solid #ddd;}
   display:grid;
   grid-template-columns:2fr 1fr;
   gap:30px;
-}
-.casalinghi-grid img{
-  width:100%;
-  border-radius:12px;
 }
 
 /* ===== FOOTER ===== */
@@ -192,47 +195,123 @@ footer{
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-whatsapp"></i></a>
     </div>
-
     <div class="header-center">
       <img src="IMAGE/logo1.jpg">
     </div>
-
     <div class="header-right">
-      Via della Comunità Europea 18<br>Figline Incisa Valdarno
+      Via della Comunità Europea 18<br>Figline Incisa Valdarno (FI)
     </div>
   </div>
-
   <div class="header-slogan">
     ONE HOME & FASHION – ABBIGLIAMENTO E CASALINGHI
   </div>
 </header>
 
+<!-- MENU -->
 <nav class="menu">
-  <ul class="menu-list">
-    <li class="menu-left">
-      <a class="card">CASALINGHI</a>
-      <a class="card">ABBIGLIAMENTO</a>
-      <a class="card">CARTOLERIA</a>
-      <a class="card">MOBILI</a>
-      <a class="card">PET</a>
-      <a class="card">ARREDAMENTO</a>
-    </li>
-
-    <li class="menu-center">
-      <a class="promo">PROMO</a>
-    </li>
-
-    <li class="menu-right">
-      <a class="card">IDEE REGALO</a>
-      <a class="card">DETERSIVI</a>
-      <a class="card">CUCINA</a>
-      <a class="card">FIORI</a>
-      <a class="card">ONE HOME CARD</a>
-    </li>
-  </ul>
+<ul class="menu-list">
+<li class="menu-left">
+<a href="#casalinghi" class="card">CASALINGHI</a>
+<a href="#" class="card">ABBIGLIAMENTO</a>
+<a href="#" class="card">CARTOLERIA</a>
+<a href="#" class="card">MOBILI</a>
+<a href="#" class="card">PET</a>
+<a href="#" class="card">ARREDAMENTO</a>
+</li>
+<li class="menu-center">
+<a href="#promo" class="promo">PROMO</a>
+</li>
+<li class="menu-right">
+<a href="#" class="card">IDEE REGALO</a>
+<a href="#" class="card">DETERSIVI</a>
+<a href="#" class="card">CUCINA</a>
+<a href="#" class="card">FIORI</a>
+<a href="#" class="card">ONE HOME CARD</a>
+</li>
+</ul>
 </nav>
 
-<footer>© 2026 ONE HOME & FASHION</footer>
+<!-- SLIDER MARCHI -->
+<div class="brands">
+  <div class="brands-track">
+    <img src="IMAGE/girmi.jpg">
+    <img src="IMAGE/tognana.jpg">
+    <img src="IMAGE/pedrini.jpg">
+    <img src="IMAGE/aeternum.jpg">
+    <img src="IMAGE/girmi.jpg">
+    <img src="IMAGE/tognana.jpg">
+    <img src="IMAGE/pedrini.jpg">
+    <img src="IMAGE/aeternum.jpg">
+  </div>
+</div>
+
+<!-- PROMOZIONI -->
+<section id="promo" class="promo-month">
+  <div class="promo-wrapper">
+    <h2 class="promo-title">PROMOZIONI DEL MESE</h2>
+    <p class="promo-text">
+      Occasioni imperdibili selezionate per te: qualità, convenienza e novità ogni mese.
+    </p>
+    <div class="promo-layout">
+      <div class="promo-poster">
+        <img src="IMAGE/COMPRABENE1.JPG">
+      </div>
+      <div class="promo-grid">
+        <div class="promo-item"><img src="IMAGE/ferramenta.jpg"><p>Ferramenta</p><div class="price">€19,90</div></div>
+        <div class="promo-item"><img src="IMAGE/giocattoli1.jpg"><p>Giocattoli</p><div class="price">€9,90</div></div>
+        <div class="promo-item"><img src="IMAGE/COSMETICI1.jpg"><p>Cosmetici</p><div class="price">€4,99</div></div>
+        <div class="promo-item"><img src="IMAGE/cornici1.jpg"><p>Cornici</p><div class="price">€7,90</div></div>
+        <div class="promo-item"><img src="IMAGE/ferramenta.jpg"><p>Utensili</p><div class="price">€14,90</div></div>
+        <div class="promo-item"><img src="IMAGE/giocattoli1.jpg"><p>Giochi</p><div class="price">€6,90</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOVITÀ -->
+<section class="news">
+  <h2>NOVITÀ</h2>
+  <p style="text-align:center">
+    Scopri i nuovi arrivi e i prodotti più richiesti del momento.
+  </p>
+  <div class="news-grid">
+    <div class="news-item">Nuovi articoli casalinghi</div>
+    <div class="news-item">Nuova collezione abbigliamento</div>
+    <div class="news-item">Idee regalo stagionali</div>
+  </div>
+</section>
+
+<!-- CASALINGHI -->
+<section id="casalinghi">
+  <h2>CASALINGHI</h2>
+  <div class="casalinghi-grid">
+    <img src="IMAGE/ferramenta.jpg">
+    <div class="casalinghi-right">
+      <img src="IMAGE/giocattoli1.jpg">
+      <img src="IMAGE/COSMETICI1.jpg">
+    </div>
+  </div>
+</section>
+
+<!-- CHI SIAMO -->
+<section>
+  <h2>CHI SIAMO</h2>
+  <p style="text-align:center">
+    ONE HOME & FASHION è il punto di riferimento per la casa e l’abbigliamento.
+  </p>
+</section>
+
+<!-- DOVE SIAMO -->
+<section>
+  <h2>DOVE SIAMO</h2>
+  <p style="text-align:center">
+    Via della Comunità Europea 18 – Figline Incisa Valdarno (FI)
+  </p>
+</section>
+
+<footer>
+  © 2026 ONE HOME & FASHION
+</footer>
 
 </body>
 </html>
