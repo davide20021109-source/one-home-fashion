@@ -61,7 +61,7 @@ header{border-bottom:1px solid #ddd;}
   letter-spacing:1px;
 }
 
-/* ===== MENU ===== */
+/* ===== MENU (FIX SPAZI E ALLINEAMENTO) ===== */
 .menu{
   background:#000;
   padding:18px 10px;
@@ -77,7 +77,6 @@ header{border-bottom:1px solid #ddd;}
   gap:20px;
 }
 
-/* colonne */
 .menu-left,
 .menu-center,
 .menu-right{
@@ -87,6 +86,18 @@ header{border-bottom:1px solid #ddd;}
   flex-wrap:wrap;
 }
 
+.menu-left{
+  flex:1;
+}
+
+.menu-center{
+  flex:0 0 auto;
+}
+
+.menu-right{
+  flex:1;
+  justify-content:flex-end;
+}
 /* larghezze equilibrate */
 .menu-left{flex:1;}
 .menu-center{flex:0 0 auto;}
